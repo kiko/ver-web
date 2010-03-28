@@ -1,0 +1,248 @@
+/* */
+
+/* @group reset */
+@import compass/reset
++reset-html5
+/* @group defaults */
+@import base
+
+/* @group STRUCTURE */
+/* @group COMPONENTS by type */
+/* @group OVERRIDES by content */
+/* @group OVERRIDES by page */
+/* @group DEBUG */
+
+/* Variables */
+!section_margin = 3em
+
+/* */
+body
+  +susy
+  :color= !font_color
+.container
+  +container
+  //+grid
+
+/* Header */
+header
+  :background
+    :color #222
+  .container
+    :position relative
+    :padding
+      :top    1em
+      :bottom 0.5em
+  h1
+    a
+      +columns(4)
+      +alpha
+      span#logo-copy
+        +columns(2.7,4)
+        :color #777
+        :font-size 90%
+        :margin-right 0
+        :text-shadow rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px
+        #capital-v
+          :color #62b5d2
+        #capital-e
+          :color #99cee3
+        #capital-r
+          :color #c9e6ee
+        .conjunction
+          :color #555
+          :font-size 80%
+    a:hover
+      span#logo-copy
+        :color #fff
+        .conjunction
+          :color #ccc
+  nav
+    +horizontal_list
+    +columns(5)
+    +omega
+    :font
+      :size 135%
+    li
+      :text-align center
+      :width 30%
+    li a:link
+      :color #888
+      :text-shadow rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px
+    li a:hover /* FIXME */
+      :color #fff
+
+/* Carousel */
+#carousel
+  .container
+    :position relative
+  :padding-top 2em
+  :background
+    :image    url(../public/images/bg-blue.png)
+    :repeat   repeat-x
+    :position left top
+  h2
+    +columns(7)
+    +alpha
+  #promo
+    +columns(6)
+    +alpha
+    :margin
+      :top   1em
+      :right 2em
+      :left  4em
+    :-moz-border-radius 1em
+    :-moz-border-radius-bottomleft  0
+    :-moz-border-radius-bottomright 0
+    :background
+      :image url(../public/images/promo-shadow.png)
+      :color #75a135
+      :repeat repeat-x
+      :position left bottom
+    img
+      +columns(3,7)
+      +alpha(7)
+      :margin
+        :right 0em
+      :padding 1em
+      :-moz-box-shadow 0px -2px 10px #444
+    ul
+      +columns(3,7)
+      :padding
+        :top  2em
+        :left 1em
+      li
+        :text-align center
+      li a:hover /* FIXME */
+        :color #fff
+      a
+        :color #41591d
+        :font
+          :size 180%
+          :weight bold
+        :text-shadow rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.9) 0 1px, rgba(0,0,0,0.3) -1px -2px
+      p
+        :text-align center
+        :color #fff
+        :line-height 100%
+        :margin
+          :top    0
+          :bottom 0.5em
+        :font-size 200%
+  #speaks
+    +columns(5)
+    +omega
+    :position absolute
+    :bottom 0
+    dt
+      +columns(4,5)
+      +omega(5)
+      :background
+        :color    #d9d9d9
+        :image    url(../public/images/promo-shadow.png)
+        :repeat   repeat-x
+        :position center bottom
+      :-moz-border-radius 0.25em
+      :-moz-border-radius-bottomleft  0
+      :-moz-border-radius-bottomright 0
+      :-moz-box-shadow 0px -2px 10px #333
+      :padding
+        :top    1em
+        :left   1em
+        :bottom 1em
+        :right  1em
+      :text-align right
+      a
+        :font-weight bold
+      img
+        +columns(1,4)
+        +omega(4)
+        :margin
+          :left 1em
+    dd
+      +columns(4,5)
+      +alpha(5)
+      :padding 1em
+      :min-height 4em /* FIXME */
+      :color #333
+      :background
+        :color #e6e6e6
+      :-moz-border-radius 1em
+      :-moz-box-shadow 5px 5px 10px #444
+      p
+        :font
+          :family Times New Roman /* FIXME */
+          :weight bold
+          :size 150%
+    h3
+      :text
+        :align right
+      :font
+        :size 70%
+      :color #f98700
+      :margin
+        :top    9em
+        :bottom 1em
+  img#triangle
+    +columns(1)
+    +pad(6,0)
+    :margin
+      :bottom 1em
+
+/* Main Content */
+#articles
+  :padding-top 2em
+  :background
+    :color    #fff
+    :image url(../public/images/content-head-grad.png)
+    :repeat   repeat-x
+    :position top center
+  .container
+    :padding
+      :top    2em
+      :bottom 2em
+    article
+      +columns(6)
+      +alpha
+      img
+        +columns(5.5,6)
+        +pad(0.25,0,6)
+        :margin
+          :top    1em
+          :bottom 1em
+      h3
+        +columns(5.5,6)
+        +pad(0.25,0,6)
+        :color #000
+        :font-size 130%
+        :font-weight normal
+        :font-family arial, sans /* FIXME */
+      p
+        +columns(5.5,6)
+        +pad(0.25,0,6)
+        :margin
+          :bottom 1em
+    article.omega
+      +omega
+      :margin /* reset +alpha */
+        :left 0
+    article#tm
+      +columns(12)
+
+/* Footer */
+#footer
+  :background
+    :color #222
+  .container
+    :color #888
+    :text
+      :align center
+    :padding
+      :top     2em
+      :bottom  2em
+    :clear both
+    span
+      :color #fff
+    /* Using px helps not breaking layout by page zoom */
+    img#twitter
+      :width 120px
+/* @end */
