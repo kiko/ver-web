@@ -1,0 +1,85 @@
+%section#carousel
+  .container
+    %h2
+      %img{:alt => "Change Me", :src =>"images/title.png"}
+    %section#voice
+      %aricle
+        %h3 live from the world
+        %blockquote
+          ver changed my life, i love ver so much! bluh bluh bluh... bleh bleh bleh, bluh bluh bluh bluh
+        -# comment out for now
+        -# %img#triangle{:src => 'pubbic/images/triangle.png'}
+        .namecard
+          %img{:src => 'images/michael.png'}
+          %a{:href => '#'} michael fellinger
+          %p 1 hour ago from twitter
+    #promo
+      %img{:src => 'images/demo.png'}
+      %ul
+        %li
+          %a{:href => '#'} Watch Demo
+        %p or
+        %li
+          %a{:href => 'download.html'} Download
+
+%section#articles
+  .container
+    %article#ruby
+      %h3 It's Pure Ruby
+      %p
+        VER is written in Ruby from head to feet, unlike many other editors
+        in use today, If you know Ruby, or are interested in the workings of
+        your editor, you can easily dive in and get started.
+      %img{:alt => "Ruby Logo", :src =>"images/ruby.png"}
+
+    %article#oss.omega
+      %h3 Free and Open Source Forever
+      %p
+        VER is under the MIT License.
+        This means that you get all of the four freedoms:
+        The freedom to run the program for any purpose.
+        The freedom to study how the program works, and change it to make it
+        do what you wish.
+        Access to the source code is a precondition for this.
+        The freedom to redistribute copies of your modified versions to
+        others. By doing this you can give the whole community a chance to
+        benefit from your changes.
+
+        So you can give it to your friends, use it in your school, sell it
+        to your customers, and read and modify all of the source.
+
+        You can obtain the source code at
+        %a{href: 'http://github.com/manveru/ver'} GitHub
+      %img{:alt => "GitHub", :src =>"images/github.png"}
+
+    %article#modal
+      %h3 Ninjas &amp; Pirates
+      %p
+        Be it modal or non-modal, VER provides you full flexibility to
+        choose the way you want to do your editing, be it modal or
+        non-modal, by providing you different keymaps that each behave like
+        another editor you might already be used to.
+
+        This allows you to try VER without much mental overhead and get
+        started without much training.
+      %img{:alt => "Change Me", :src =>"images/modal.png"}
+
+    %article#platform.omega
+      %h3 Cross-platform
+      %p
+        VER is using the Tk GUI toolkit through a cross-platform FFI
+        binding.
+        Ruby is also available for many different platforms.
+        You can also run it on top of JRuby, which runs virtually everywhere
+        Java runs.
+      %img{:alt => "Cross-platform", :src =>"images/platform.png"}
+
+    %article#tm
+      %h3 Textmate Bundles
+      %p
+        VER takes advantage of the vast resource of textmate bundles that
+        are mostly under open-source licenses.
+        This means we support over 170 programming, markup, and
+        configuration-languages out of the box.
+        Many more bundles can be found online.
+      %img{:alt => "TextMate", :src =>"images/tm.png"}

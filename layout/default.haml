@@ -1,0 +1,37 @@
+!!! 5
+%html
+  %head
+    %title VER - Vim & Emacs in Ruby
+    %link{:rel => "stylesheet", :href => "css/screen.css", :type => "text/css", :media => "screen"}
+    -# %script{:type => "text/javascript", :src  => "public/js/jquery-1.4.1.min.js"}
+    -# %script{:type => "text/javascript", :src  => "public/js/core.js"}
+    -# %script{:type => "text/javascript", :src  => "public/js/kikofx.carousel.js"}
+
+  %body.home
+    %header
+      .container
+        %h1
+          %a{:href => 'index.html'}
+            <span id='logo-copy'><span id='capital-v'>V</span>im<span class='conjunction'>&</span><span id='capital-e'>E</span>macs<span class='conjunction'>in</span><span id='capital-r'>R</span>uby</span>
+
+        %nav
+          %ul
+            %li
+              %a{:href =>"install.html"} Download
+            %li
+              %a{:href =>"docs.html"} Docs
+            %li
+              %a{:href =>"development.html"} Development
+
+    =@content
+
+    #footer
+      .container
+        %span Follow us on
+        %img#twitter{:alt=>"Twitter", :src=>"images/twitter-logo.png"}
+        %p Copyright &copy; 2009-2010 Michael Fellinger, some rights reserved.
+        %p Made by Kiko Uehara
+        %a{:rel=>"license", :href=>"http://creativecommons.org/licenses/by-sa/2.1/jp/"}
+          -#%img{:alt=>"Creative Commons License", :src=>"http://i.creativecommons.org/l/by-sa/2.1/jp/80x15.png"}
+        %a{:href=>"http://ramaze.net"}
+          -#%img{:alt=>"Powered by Ramaze",:src=>"/ramaze.png"}

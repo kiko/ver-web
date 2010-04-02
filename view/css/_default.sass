@@ -1,0 +1,192 @@
+//**
+/* page width is 954 px */
+
+/* GRID */
+// un-comment and override these values as needed for your grid layout
+// (defaults are shown)
+!grid_unit = "em"
+!total_cols = 12
+!col_width = 4
+!gutter_width = 1.2
+!side_gutter_width = !gutter_width
+
+// !omega_float = "right"
+
+/* HACKS */
+// Are you using hacks or conditional comments? Susy makes both possible.
+// Leave this as 'true' to use hacks, set it as false for conditional comments.
+// Conditional comments will require overrides for +omega, +inline-block and
+// several other mixins.
+!hacks = true
+
+/* FONT-SIZE */
+// un-comment and override these values as needed (defaults are shown)
+// - you set the font and line heights in pixels.
+// - Susy will do the math and give you !base_font_size and !base_line_height
+//   variables, set flexibly against the common browser default of 16px
+!base_font_size_px = 15
+!base_line_height_px = 22.5
+
+/* SUSY */
+//  (don't move this @import above the GRID and FONT-SIZE overrides)
+@import susy/susy.sass
+
+/* COLORS */
+!font_color    = #333
+!quiet_color   = !font_color + #333
+!loud_color    = !font_color - #222
+!header_color  = #fff
+!link_color    = #00f
+!visited_color = #fff
+!hover_color   = #fff
+!focus_color   = !hover_color
+!active_color  = !hover_color
+!background_color = #fff
+!emboss_color = #2f2f2f
+!hover_bg_color = #222
+
+/* UNITS */
+!one_px     = 0.0666em
+!one_gutter = 1.8867%
+
+/* FONTS */
+// Give yourself some font stacks to work with
+=sans-family
+  //:font-family "Trebuchet MS", Arial, Helvetica, sans-serif
+  :font-family "HelveticaNeue-Light", sans-serif
+=serif-family
+  :font-family Baskerville, Palatino, serif
+
+/* Mix-inx*/
+=grid
+  :background
+    :image  url("../public/images/954-grid-40.png")
+    :repeat repeat-y
+  *
+    :background transparent
+  div, nav, header, section, article
+    :background rgba(0,0,0,.125)
+
+=horizontal_lists
+  ul
+    :float left
+    :width 100%
+    :list-style
+      :type none
+    li
+      :float left
+      :text
+        :align center
+
+=emboss(!to, !color_num = 1)
+  :border-#{!to}
+    :style solid
+    :width= !one_px
+    :color= !emboss_color * !color_num
+=emboss_light(!to)
+  +emboss(!to, 1.1)
+
+/* Default styles */
+body
+  +sans-family
+  :color= !font_color
+  :text
+    :align left
+/* links */
+\:focus
+  :outline= 1px "dotted" !quiet_color
+  :color= !hover_color
+a
+  :text-decoration none
+  &:link
+    :color= !link_color
+  &:visited
+    :color= !visited_color
+  &:focus, &:hover, &:active
+    :color= !hover_color
+    :text-decoration none
+
+/* headers */
+h1, h2, h3, h4, h5, h6
+  :color= !header_color
+  :font-weight bold
+h1, h2, h3
+  +sans-family
+h1
+  :font-size= !base_line_height
+/* Temporary */
+h3
+  :font
+    :size 120%
+  :margin
+    :top    0.5em
+    :right  0
+    :bottom 0.5em
+    :left   0
+
+/* forms */
+form *:focus
+  :outline none
+fieldset
+  :margin= !base_line_height 0
+legend
+  :font-weight bold
+  :font-variant small-caps
+label
+  :display block
+  :margin-top= !base_line_height
+legend + label
+  :margin-top 0
+textarea, input[type="text"]
+  :color= !quiet_color
+  +box-sizing("border-box")
+  :width 100%
+
+/* tables */
+// tables still need 'cellspacing="0"' in the markup
+table
+  :width 100%
+  :border= 1/16 + "em solid" !quiet_color + #333
+    :left none
+    :right none
+  :padding= 7/16 + "em 0"
+  :margin= 8/16 + "em 0"
+tbody
+  :color= !quiet_color
+th
+  :font-weight bold
+
+/* block tags */
+p
+  :margin
+    :top 0.5em
+  // :margin= !base_line_height 0
+blockquote
+  :margin= !base_line_height
+  :color= !quiet_color
+ul
+  +no-bullets
+  :margin 0
+  :padding 0
+
+/* inline tags */
+cite
+  :font-style italic
+  :color= !quiet_color
+em
+  :font-style italic
+strong
+  :font-weight bold
+ins
+  :text-decoration underline
+del
+  :text-decoration line-through
+q
+  :font-style italic
+  em
+    :font-style normal
+
+/* replaced tags */
+img
+  :width 100%
+  :vertical-align bottom
